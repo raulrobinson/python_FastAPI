@@ -1,5 +1,10 @@
 # CRUD RESTful API Server with Python, SQLAlchemy, FastAPI, and PostgreSQL, Sending Email and Verify.
 
+## - RESTful API with Python,SQLAlchemy, & FastAPI: Access and Refresh Tokens
+## - RESTful API with Python, SQLAlchemy, & FastAPI: Send HTML Emails
+
+How to create a **CRUD** RESTful API with Python, FastAPI, SQLAlchemy ORM, Pydantic, Alembic, PostgreSQL, and Docker-compose to perform the basic **Create/Read/Update/Delete** operations against a database.
+
 ## Topics Covered
 - Python, FastAPI, PostgreSQL, SQLAlchemy CRUD API Overview
 - Setting up FastAPI and PostgreSQL
@@ -17,23 +22,6 @@
   - Get a Single Post Handler
   - Remove Post Handler
 - Add the Routes to the FastAPI Middleware Stack
-
-## - RESTful API with Python,SQLAlchemy, & FastAPI: Access and Refresh Tokens
-## - RESTful API with Python, SQLAlchemy, & FastAPI: Send HTML Emails
-
-How to create a **CRUD** RESTful API with Python, FastAPI, SQLAlchemy ORM, Pydantic, Alembic, PostgreSQL, and Docker-compose to perform the basic **Create/Read/Update/Delete** operations against a database.
-
-- Python, FastAPI, PostgreSQL CRUD API Overview
-- Prerequisites
-- Setting up FastAPI and PostgreSQL
-- Setting up Environment Variables
-- Connecting to the PostgreSQL Server
-- How to Create Database Models with SQLAlchemy
-- Creating Validation Schemas with Pydantic
-- Creating the FastAPI Controllers
-- Adding the FastAPI Routers
-- Conclusion
-- FastAPI and PostgreSQL CRUD API Source Code
 
 ## Python, FastAPI, PostgreSQL CRUD API Overview
 
