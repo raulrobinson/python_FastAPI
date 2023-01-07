@@ -1,4 +1,4 @@
-# CRUD RESTful API Server with Python, SQLAlchemy, FastAPI, and PostgreSQL
+# CRUD RESTful API Server with Python, SQLAlchemy, FastAPI, and PostgreSQL, Sending Email and Verify.
 
 ## Topics Covered
 - Python, FastAPI, PostgreSQL, SQLAlchemy CRUD API Overview
