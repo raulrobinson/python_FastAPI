@@ -235,6 +235,7 @@ def root():
 
 - Start the FastAPI server with this command:
 ```text
+.\venv\Scripts\activate.bat
 uvicorn app.main:app --host localhost --port 8000 --reload
 ```
 
