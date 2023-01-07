@@ -817,10 +817,36 @@ app.include_router(post.router, tags=['Posts'], prefix='/api/posts')
 def root():
     return {'message': 'Hello World'}
 ```
+### Register User
+![img.png](assets/img.png)
+
+### Verify Email User
+![img_1.png](assets/img_1.png)
+
+### Login User
+![img_2.png](assets/img_2.png)
+
+### Refresh Token
+![img_3.png](assets/img_3.png)
+
+### User Content
+![img_4.png](assets/img_4.png)
+
+### All Posts
+![img_5.png](assets/img_5.png)
+
+### Create Posts
+![img_6.png](assets/img_6.png)
+
+### Get Post by ID
+![img_7.png](assets/img_7.png)
+
+### Update Post by ID
+![img_8.png](assets/img_8.png)
 
 With this *FastAPI, PostgreSQL, Pydantic, SQLAlchemy, Alembic,* and *Docker-compose* example in *Python*, you’ve learned how to build a **Restful CRUD API** server to perform the basic **Create/Read/Update/Delete** operations.
 
-## Contenerized Image
+## Containerized Image
 ```text
 docker build --tag python-docker-fastapi-standard .
 ```
