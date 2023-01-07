@@ -1,11 +1,6 @@
-# CRUD RESTful API Server with Python, SQLAlchemy, FastAPI, and PostgreSQL, Sending Email and Verify.
+# CRUD RESTful API Server with Python, SQLAlchemy, FastAPI, and PostgreSQL
 
-## - RESTful API with Python,SQLAlchemy, & FastAPI: Access and Refresh Tokens
-## - RESTful API with Python, SQLAlchemy, & FastAPI: Send HTML Emails
-
-How to create a **CRUD** RESTful API with Python, FastAPI, SQLAlchemy ORM, Pydantic, Alembic, PostgreSQL, and Docker-compose to perform the basic **Create/Read/Update/Delete** operations against a database.
-
-## Topics Covered
+## Topics Covered 
 - Python, FastAPI, PostgreSQL, SQLAlchemy CRUD API Overview
 - Setting up FastAPI and PostgreSQL
   - Building the FastAPI Server
@@ -22,6 +17,23 @@ How to create a **CRUD** RESTful API with Python, FastAPI, SQLAlchemy ORM, Pydan
   - Get a Single Post Handler
   - Remove Post Handler
 - Add the Routes to the FastAPI Middleware Stack
+
+## - RESTful API with Python,SQLAlchemy, & FastAPI: Access and Refresh Tokens
+## - RESTful API with Python, SQLAlchemy, & FastAPI: Send HTML Emails
+
+How to create a **CRUD** RESTful API with Python, FastAPI, SQLAlchemy ORM, Pydantic, Alembic, PostgreSQL, and Docker-compose to perform the basic **Create/Read/Update/Delete** operations against a database.
+
+- Python, FastAPI, PostgreSQL CRUD API Overview
+- Prerequisites
+- Setting up FastAPI and PostgreSQL
+- Setting up Environment Variables
+- Connecting to the PostgreSQL Server
+- How to Create Database Models with SQLAlchemy
+- Creating Validation Schemas with Pydantic
+- Creating the FastAPI Controllers
+- Adding the FastAPI Routers
+- Conclusion
+- FastAPI and PostgreSQL CRUD API Source Code
 
 ## Python, FastAPI, PostgreSQL CRUD API Overview
 
@@ -122,6 +134,74 @@ docker-compose up -d
 can stop the container with this command:
 ```text
 docker-compose down
+```
+
+Definitios by database in Postgres
+```sql
+-- Database: fastapi
+
+-- DROP DATABASE IF EXISTS fastapi;
+
+CREATE DATABASE fastapi
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+    
+-- Table: public.posts
+
+-- DROP TABLE IF EXISTS public.posts;
+
+CREATE TABLE IF NOT EXISTS public.posts
+(
+    id uuid NOT NULL,
+    user_id uuid NOT NULL,
+    title character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    content character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    category character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    image character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    updated_at timestamp without time zone NOT NULL DEFAULT now(),
+    CONSTRAINT posts_pkey PRIMARY KEY (id),
+    CONSTRAINT posts_user_id_fkey FOREIGN KEY (user_id)
+        REFERENCES public.users (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.posts
+    OWNER to postgres;
+
+-- Table: public.users
+
+-- DROP TABLE IF EXISTS public.users;
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id uuid NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    photo character varying(255) COLLATE pg_catalog."default",
+    verified boolean NOT NULL,
+    verification_code character varying(255) COLLATE pg_catalog."default",
+    role character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    updated_at timestamp without time zone NOT NULL DEFAULT now(),
+    CONSTRAINT users_pkey PRIMARY KEY (id),
+    CONSTRAINT users_email_key UNIQUE (email)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.users
+    OWNER to postgres;
 ```
 
 ## Building the FastAPI Server
@@ -733,8 +813,8 @@ def root():
     return {'message': 'Hello World'}
 ```
 
-With this FastAPI, PostgreSQL, Pydantic, SQLAlchemy, Alembic, and Docker-compose example in Python, you’ve learned how to build a Restful CRUD API server to perform the basic Create/Read/Update/Delete operations.
+With this *FastAPI, PostgreSQL, Pydantic, SQLAlchemy, Alembic,* and *Docker-compose* example in *Python*, you’ve learned how to build a **Restful CRUD API** server to perform the basic **Create/Read/Update/Delete** operations.
 
 GitHub: https://github.com/raulrobinson/python_FastAPI.git
 
-### @Teach and Share.
+@Teach and Share.
