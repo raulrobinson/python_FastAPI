@@ -234,7 +234,11 @@ def root():
 ```
 
 - Start the FastAPI server with this command:
+
+Activate or deactivate **venv**
 ```text
+pip install virtualenv
+.\venv\Scripts\deactivate.bat
 .\venv\Scripts\activate.bat
 uvicorn app.main:app --host localhost --port 8000 --reload
 ```
@@ -815,6 +819,24 @@ def root():
 ```
 
 With this *FastAPI, PostgreSQL, Pydantic, SQLAlchemy, Alembic,* and *Docker-compose* example in *Python*, you’ve learned how to build a **Restful CRUD API** server to perform the basic **Create/Read/Update/Delete** operations.
+
+## Contenerized Image
+```text
+docker build --tag python-docker-fastapi-standard .
+```
+
+## Interactive running image
+```text
+docker run -it --name python-fastapi-standard-it -p 8085:8000 python-docker-fastapi-standard
+```
+
+## Background
+```text
+docker run -d --name python-fastapi-standard-wit -p 8085:8000 python-docker-fastapi-standard
+```
+
+## OpenAPI
+- link: http://127.0.0.1:8085/redoc
 
 GitHub: https://github.com/raulrobinson/python_FastAPI.git
 
