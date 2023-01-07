@@ -851,12 +851,12 @@ With this *FastAPI, PostgreSQL, Pydantic, SQLAlchemy, Alembic,* and *Docker-comp
 docker build --tag python-docker-fastapi-standard .
 ```
 
-## Interactive running image
+## Interactive running container
 ```text
 docker run -it --name python-fastapi-standard-it -p 8085:8000 python-docker-fastapi-standard
 ```
 
-## Background
+## Running container in background
 ```text
 docker run -d --name python-fastapi-standard-wit -p 8085:8000 python-docker-fastapi-standard
 ```
