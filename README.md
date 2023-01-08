@@ -235,7 +235,7 @@ def root():
 
 - Start the FastAPI server with this command:
 
-Activate or deactivate **venv**
+Activate or deactivate **venv** in ms-dos terminal.
 ```text
 pip install virtualenv
 .\venv\Scripts\deactivate.bat
